@@ -1,5 +1,5 @@
 {
-    "name": "talovskiy/simple-geolite",
+    "name": "talovskiy/simple-geo-ip",
     "description": "Simple GeoLite PHP package",
     "license": "MIT",
     "authors": [
