@@ -1,0 +1,37 @@
+{
+    "name": "talovskiy/simple-geolite",
+    "description": "Simple GeoLite PHP package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nikita Talovskiy",
+            "email": "talovskiy@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-json": "*",
+        "geoip2/geoip2": "^2.12"
+    },
+    "autoload": {
+        "psr-4": {
+            "Talovskiy\\SimpleGeoIp\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Talovskiy\\SimpleGeoIp\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "phpunit/phpunit": "^9.5",
+        "squizlabs/php_codesniffer": "^3.6"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Talovskiy\\SimpleGeoIp\\SimpleGeoIpServiceProvider"
+            ]
+        }
+    }
+}
