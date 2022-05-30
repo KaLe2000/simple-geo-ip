@@ -2,6 +2,7 @@
 .env
 .env.example
 docker-compose.yml
+composer.lock
 docker/
 public/
 storage/
