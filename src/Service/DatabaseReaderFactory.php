@@ -25,6 +25,8 @@ final class DatabaseReaderFactory
             throw new InvalidTypeException('unhandled database reader type');
         }
 
-        return new Reader(\config('simple-geo-ip.' . $type . '.database'));
+        $path = base_path(\config('simple-geo-ip.' . $type . '.database'));
+
+        return new Reader($path);
     }
 }
