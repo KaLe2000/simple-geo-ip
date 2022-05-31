@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Talovskiy\SimpleGeoIp\Service;
 
-use GeoIp2\Model\Country;
 use GeoIp2\Model\AbstractModel;
 use Talovskiy\SimpleGeoIp\Dto\CountryDto;
 

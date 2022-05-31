@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Talovskiy\SimpleGeoIp\Service;
 
 use GeoIp2\Model\AbstractModel;
-use GeoIp2\Model\Asn;
 use Talovskiy\SimpleGeoIp\Dto\AsnDto;
 
 final class AsnService extends AbstractService
