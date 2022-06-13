@@ -10,7 +10,6 @@ use Talovskiy\SimpleGeoIp\Dto\AsnDto;
 final class AsnService extends AbstractService
 {
     public const SERVICE_TYPE = 'asn';
-    private const RESULT_UNDEFINED = 'Неопознана';
 
     /**
      * @throws \GeoIp2\Exception\AddressNotFoundException
@@ -22,14 +21,14 @@ final class AsnService extends AbstractService
     }
 
     /**
-     * @param AbstractModel|null $model
+     * @param AbstractModel $model
      * @return AsnDto
      */
-    protected function getDto(?AbstractModel $model): AsnDto
+    protected function getDto(AbstractModel $model): AsnDto
     {
         return new AsnDto(
-            $model?->autonomousSystemOrganization ?? self::RESULT_UNDEFINED,
-            $model?->raw ?? [],
+            $model?->autonomousSystemOrganization,
+            $model?->raw,
         );
     }
 }

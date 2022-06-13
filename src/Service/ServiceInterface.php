@@ -8,5 +8,5 @@ use Talovskiy\SimpleGeoIp\Dto\ServiceDtoInterface;
 
 interface ServiceInterface
 {
-    public function getData(string $ip): ServiceDtoInterface;
+    public function getData(string $ip): ?ServiceDtoInterface;
 }

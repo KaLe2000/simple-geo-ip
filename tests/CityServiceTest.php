@@ -28,4 +28,11 @@ class CityServiceTest extends TestCase
         $this->assertEquals('Kozuchow', $cityDto->getCity());
         $this->assertEquals('Poland', $cityDto->getCountry());
     }
+
+    public function testGetDataNull(): void
+    {
+        $service = new CityService($this->reader);
+
+        $this->assertNull($service->getData('127.0.0.1'));
+    }
 }

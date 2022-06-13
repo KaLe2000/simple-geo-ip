@@ -17,17 +17,17 @@ abstract class AbstractService implements ServiceInterface
         $this->reader = $reader;
     }
 
-    public function getData(string $ip): ServiceDtoInterface
+    public function getData(string $ip): ?ServiceDtoInterface
     {
         try {
             return $this->getDto($this->getGeoData($ip));
         } catch (\Throwable $e) {
             // Если не удалось определить данные выводим заглушку
-            return $this->getDto(null);
+            return null;
         }
     }
 
     abstract protected function getGeoData(string $ip): AbstractModel;
 
-    abstract protected function getDto(?AbstractModel $model): ServiceDtoInterface;
+    abstract protected function getDto(AbstractModel $model): ServiceDtoInterface;
 }

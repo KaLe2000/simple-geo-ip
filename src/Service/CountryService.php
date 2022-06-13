@@ -10,7 +10,6 @@ use Talovskiy\SimpleGeoIp\Dto\CountryDto;
 final class CountryService extends AbstractService
 {
     public const SERVICE_TYPE = 'country';
-    private const RESULT_UNDEFINED = 'Неопознана';
 
     protected function getGeoData(string $ip): AbstractModel
     {
@@ -18,15 +17,15 @@ final class CountryService extends AbstractService
     }
 
     /**
-     * @param AbstractModel|null $model
+     * @param AbstractModel $model
      * @return CountryDto
      */
-    protected function getDto(?AbstractModel $model): CountryDto
+    protected function getDto(AbstractModel $model): CountryDto
     {
         return new CountryDto(
-            $model?->continent->name ?? self::RESULT_UNDEFINED,
-            $model?->country->name ?? self::RESULT_UNDEFINED,
-            $model?->raw ?? [],
+            $model?->continent->name,
+            $model?->country->name,
+            $model?->raw,
         );
     }
 }

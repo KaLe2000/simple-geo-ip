@@ -10,7 +10,6 @@ use Talovskiy\SimpleGeoIp\Dto\CityDto;
 final class CityService extends AbstractService
 {
     public const SERVICE_TYPE = 'city';
-    private const RESULT_UNDEFINED = 'Неопознан';
 
     /**
      * @throws \GeoIp2\Exception\AddressNotFoundException
@@ -22,17 +21,17 @@ final class CityService extends AbstractService
     }
 
     /**
-     * @param AbstractModel|null $model
+     * @param AbstractModel $model
      * @return CityDto
      */
-    protected function getDto(?AbstractModel $model): CityDto
+    protected function getDto(AbstractModel $model): CityDto
     {
         return new CityDto(
-            $model?->continent->name ?? self::RESULT_UNDEFINED,
-            $model?->country->name ?? self::RESULT_UNDEFINED,
-            $model?->mostSpecificSubdivision->name ?? self::RESULT_UNDEFINED,
-            $model?->city->name ?? self::RESULT_UNDEFINED,
-            $model?->raw ?? [],
+            $model?->continent->name,
+            $model?->country->name,
+            $model?->mostSpecificSubdivision->name,
+            $model?->city->name,
+            $model?->raw,
         );
     }
 }

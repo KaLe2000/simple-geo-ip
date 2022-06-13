@@ -12,14 +12,14 @@ use Talovskiy\SimpleGeoIp\Service\DatabaseReaderFactory;
 
 class SimpleGeoIpServiceProvider extends ServiceProvider
 {
-    public function boot()
+    public function boot(): void
     {
         $this->publishes([
             __DIR__ . '/../config/simple-geo-ip.php' => config_path('simple-geo-ip.php'),
         ]);
     }
 
-    public function register()
+    public function register(): void
     {
         $this->app->singleton(AsnService::class, function () {
             $reader = (new DatabaseReaderFactory())->getReader(AsnService::SERVICE_TYPE);
