@@ -23,7 +23,7 @@ class CountryServiceTest extends TestCase
     public function testGetData(): void
     {
         $service = new CountryService($this->reader);
-        $cityDto = $service->getData('213.87.224.239');
+        $cityDto = $service->getData(\config('simple-geo-ip.ip.novosibirsk'));
 
         $this->assertEquals('Europe', $cityDto->getContinent());
         $this->assertEquals('Russia', $cityDto->getCountry());
