@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Talovskiy\SimpleGeoIp\Dto;
 
+use Talovskiy\SimpleGeoIp\Service\AbstractService;
+
 class CityDto implements ServiceDtoInterface
 {
     public function __construct(
@@ -40,11 +42,12 @@ class CityDto implements ServiceDtoInterface
     }
 
     /**
+     * @param string|null $lang
      * @return string
      */
-    public function getCity(): string
+    public function getCity(?string $lang = AbstractService::LANG_RU): string
     {
-        return $this->city;
+        return $this->getRaw()['city']['names'][$lang] ?? $this->city;
     }
 
     /**

@@ -10,6 +10,9 @@ use Talovskiy\SimpleGeoIp\Dto\ServiceDtoInterface;
 
 abstract class AbstractService implements ServiceInterface
 {
+    public const LANG_RU = 'ru';
+    public const LANG_EN = 'en';
+
     protected Reader $reader;
 
     public function __construct(Reader $reader)
